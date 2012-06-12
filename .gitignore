@@ -1,0 +1,8 @@
+Session.vim
+*~
+*.bak
+*.pyc
+*.pyd
+*.pyo
+*.swp
+tools
