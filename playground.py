@@ -1,9 +1,14 @@
 from tools import area
 
+play_pieces = {
+        'square': ((0, 0), (0, 1), (1, 0), (1, 1)),
+    }
+
 class PlayGroundModel(object):
     EMPTY_TILE = 0
     def __init__(self, sx, sy):
         self._area = area.Area(sx, sy, PlayGroundModel.EMPTY_TILE)
+        self._current_piece = None
 
     @property
     def width(self):
@@ -12,6 +17,9 @@ class PlayGroundModel(object):
     @property
     def height(self):
         return self._area.height
+
+    def set_piece(self, name):
+        self._current_piece = play_pieces.get(name, None)
 
     def set_color(self, x, y, value):
         self._area[x, y] = value

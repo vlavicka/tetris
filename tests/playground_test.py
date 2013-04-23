@@ -26,8 +26,6 @@ empty_playground = """\
 |    |
 +----+"""
 
-
-
 class TestPlayGroundModel(unittest.TestCase):
     def setUp(self):
         self.model = PlayGroundModel(4, 8)
@@ -61,6 +59,7 @@ class TestPlayGroundModel(unittest.TestCase):
             self.model.set_color(i, 7, 1)
             self.model.set_color(i, 5, 1)
         self.assertEqual([5, 7], self.model.get_filled())
+        print self.model.dump_str()
 
 
     # TEST: remove filled lines
